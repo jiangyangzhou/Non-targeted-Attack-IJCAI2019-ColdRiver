@@ -32,12 +32,15 @@ To test the adversarial image
 python test_search.py --input_dir=/path/to/your/input_images --output_dir=/path/to/your/output_dir --if_attack=0
 ```
 
-To search for parameters of attacking, modify the script test_search.py
+To search for parameters of attacking, you can use the script test_search.py  
+
+To attack model, you need pretrained model weight for the dataset.   
+You need to put your weight in the right dir according to the path in attack_tijiao.py.   
 
 ### Our method
-You can find all of the thick in the attack_tijiao2.py  
+You can find all the tricks in the attack_tijiao2.py  
 Our method is gradient-based attack method.  
-Thanks to previous work, our method based on [Evading Defenses to Transferable Adversarial Examples by Translation-Invariant Attacks](https://arxiv.org/abs/1904.02884). And we add lots of our thicks, and I believe they do work.  
+Thanks to previous work, our method based on [Evading Defenses to Transferable Adversarial Examples by Translation-Invariant Attacks](https://arxiv.org/abs/1904.02884). And we add lots of our tricks, and I believe they do work.  
 1. Iterative gradient ascend.  (Loss function is CrossEntropyLoss)    
 2. Add Gaussian kernel convolution (Key point in the paper <Evading Defenses to Transferable Adversarial Examples by Translation-Invariant Attacks>)     
 3. Add input diversity (resize and padding for picture) (It seems it doesn't work sometimes)  
@@ -47,5 +50,5 @@ Thanks to previous work, our method based on [Evading Defenses to Transferable A
 7. Ensemble model, and apply different weight for different models according to the model prediction during attack iterations.  
 8. Just make the noise in the edge equal to zero  (may work)  
 
-I'm not sure these thicks always work, I also test in imagenet(NIPS 2017 adversarial competition test dataset). But the result still not clear.
+I'm not sure these tricks always work, I also test in imagenet(NIPS 2017 adversarial competition test dataset). But the result still not clear.
 
