@@ -53,5 +53,6 @@ Thanks to previous work, our method based on [Evading Defenses to Transferable A
 I'm not sure these tricks always work, I also test in imagenet(NIPS 2017 adversarial competition test dataset). But the result still not clear.
 
 #### Author
-Jiang Yangzhou
+Jiang Yangzhou 
+jiangyangzhou@sjtu.edu.cn
 
